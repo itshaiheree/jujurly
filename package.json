@@ -19,6 +19,7 @@
       "nodemailer": "latest",
       "react": "^18",
       "baileys": "latest",
+      "axios": "latest",
       "qrcode-terminal": "latest"
     },
     "devDependencies": {
