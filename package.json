@@ -1,0 +1,30 @@
+{
+    "name": "GrimyDroopySpof",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "npm i",
+      "start": "node app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.2",
+      "child_process": "^1.0.2",
+      "http": "^0.0.1-security",
+      "path": "^0.12.7",
+      "node-fetch": "^1.7.3",
+      "nodemailer": "latest",
+      "react": "^18",
+      "baileys": "latest",
+      "qrcode-terminal": "latest"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.1",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.0",
+        "daisyui": "latest"
+      }
+  }
