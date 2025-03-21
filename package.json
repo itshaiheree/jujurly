@@ -20,10 +20,7 @@
       "react": "^18",
       "baileys": "latest",
       "axios": "latest",
-      "qrcode-terminal": "latest",
-      "express-session": "latest",
-      "passport": "latest",
-      "passport-google-oauth20": "latest"
+      "qrcode-terminal": "latest"
     },
     "devDependencies": {
         "tailwindcss": "^3.4.1",
