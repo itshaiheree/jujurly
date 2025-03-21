@@ -20,7 +20,7 @@
       "react": "^18",
       "baileys": "latest",
       "axios": "latest",
-      "qrcode-terminal": "latest",
+      "qrcode": "latest",
       "fs-extra": "latest"
     },
     "devDependencies": {

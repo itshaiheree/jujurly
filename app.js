@@ -7,18 +7,7 @@ const execSync = require('child_process').execSync;
 const P = require('pino')
 const fetch = require('node-fetch')
 const { 
-default: makeWASocket, 
-DisconnectReason, 
-AnyMessageContent, 
-delay,
-proto,
-jidDecode,
-useSingleFileAuthState,
-generateForwardMessageContent, 
-generateWAMessageFromContent,
-downloadContentFromMessage, 
-generateMessageID,
-makeInMemoryStore
+default: makeWASocket
 } = require('baileys')
 const baileys = require('baileys')
 const fs = require("fs")
@@ -46,6 +35,20 @@ const chan = makeWASocket({
     auth: state,
     browser: ['Bot "confess"',"Safari","1.0.0"],
     version: getVersionWaweb() || [2, 2204, 13]
+})
+
+// you can use this package to export a base64 image or a canvas element.
+const QRCode = require('qrcode')
+
+chan.ev.on('connection.update', async (update) => {
+  const {connection, lastDisconnect, qr } = update
+  // on a qr event, the connection and lastDisconnect fields will be empty
+
+  // In prod, send this string to your frontend then generate the QR there
+  if (qr) {
+    // as an example, this prints the qr code to the terminal
+    console.log(await QRCode.toString(qr, {type:'terminal'}))
+  }
 })
 }
 
