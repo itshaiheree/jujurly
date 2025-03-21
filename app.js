@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-const axios = require('axios');
 const router = express.Router();
 
 const path = require('path')
