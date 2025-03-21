@@ -19,8 +19,8 @@ generateWAMessageFromContent,
 downloadContentFromMessage, 
 generateMessageID,
 makeInMemoryStore
-} = require('@adiwajshing/baileys')
-const baileys = require('@adiwajshing/baileys')
+} = require('baileys')
+const baileys = require('baileys')
 const fs = require("fs")
 const fsx = require('fs-extra')
 const axios = require('axios')
