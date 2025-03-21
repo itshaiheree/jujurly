@@ -87,7 +87,7 @@ if (namaTarget) { var namaTargetFix = `${namaTarget}` }
 
 chan.sendMessage(`${nomer}@s.whatsapp.net`, { text: `Halo ${namaTargetFix}! Kamu dapat sesuatu yang "spesial" dari *${namaFix}*!\n\nCek disini:\n${confess}` })
 
-}; catch(e) {
+} catch(e) {
 res.send(`Oopsie! Requestmu ditahan dikarenakan kesalahan sistem!\nKontak owner nya via IG/fesnuk @itshaiheree yaw :3\nJangan lupa kasih detail ini btw:\n\n${e}`)
 console.log(e)
 }
