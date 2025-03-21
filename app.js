@@ -7,14 +7,25 @@ const execSync = require('child_process').execSync;
 const P = require('pino')
 const fetch = require('node-fetch')
 const { 
-default: makeWASocket
+default: makeWASocket, 
+DisconnectReason, 
+AnyMessageContent, 
+delay,
+proto,
+jidDecode,
+useMultiFileAuthState,
+generateForwardMessageContent, 
+generateWAMessageFromContent,
+downloadContentFromMessage, 
+generateMessageID,
+makeInMemoryStore
 } = require('baileys')
 const baileys = require('baileys')
 const fs = require("fs")
 const fsx = require('fs-extra')
 const axios = require('axios')
 const { Boom } = require("@hapi/boom")
-const { state, loadState, saveState } = useSingleFileAuthState("./chan.json")
+const { state, loadState, saveState } = useMultiFileAuthState("chan-session")
 const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) })
 
 const getVersionWaweb = () => {
@@ -47,9 +58,18 @@ chan.ev.on('connection.update', async (update) => {
   // In prod, send this string to your frontend then generate the QR there
   if (qr) {
     // as an example, this prints the qr code to the terminal
-    console.log(await QRCode.toString(qr, {type:'terminal'}))
+    console.log(await QRCode.toString(qr, {type:'terminal'})
   }
 })
+
+chan.ev.on('connection.update', (update) => {
+  const {connection, lastDisconnect} = update
+  if (connection === 'close' && (lastDisconnect?.error as Boom)?.output?.statusCode === DisconnectReason.restartRequired) {
+    // create a new socket, this socket is now useless
+  }
+})
+
+sock.ev.on("creds.update", saveCreds);
 }
 
 startSock()
