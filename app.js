@@ -62,13 +62,6 @@ chan.ev.on('connection.update', async (update) => {
   }
 })
 
-chan.ev.on('connection.update', (update) => {
-  const {connection, lastDisconnect} = update
-  if (connection === 'close' && (lastDisconnect?.error as Boom)?.output?.statusCode === DisconnectReason.restartRequired) {
-    // create a new socket, this socket is now useless
-  }
-})
-
 sock.ev.on("creds.update", saveCreds);
 }
 
