@@ -12,7 +12,16 @@ app.use(
     next();
   },
   express.static('public')
+
+  app.router
 );
+
+app.use(function(req, res, next) {
+  res.status(404);
+
+  // respond with html page
+  response.sendFile(__dirname + "/404.html");
+});
 
 // listen for requests :)
 var listener = app.listen(1949, function() {
