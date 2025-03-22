@@ -14,8 +14,12 @@ app.use(
   express.static('public')
 );
 
-app.use(function(req,res){
-  res.status(404).render('404.html');
+//  Response 404 Page
+app.use(function(req, res, next){
+  if (req.accepts('html')) {
+    res.sendFile(__dirname + '/404.html');
+    return;
+  }
 });
 
 // listen for requests :)
