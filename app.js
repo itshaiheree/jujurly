@@ -7,8 +7,8 @@ const execSync = require('child_process').execSync;
 const P = require('pino')
 const fetch = require('node-fetch')
 
-import makeWASocket from 'baileys'
-import P from 'pino'
+const {default: makeWASocket } = require('baileys')
+const P = require('pino')
 
 const sock = makeWASocket({
   auth: state,
