@@ -10,7 +10,9 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/index.html");
 });
 
-
+app.use(function(req, res, next){
+  res.send('404: Page not Found', 404);
+});
 
 app.use(
   (request, response, next) => {

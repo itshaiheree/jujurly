@@ -24,5 +24,4 @@
             "dest": "public/$1"
         }
     ]
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api/404.js" }]
 }
