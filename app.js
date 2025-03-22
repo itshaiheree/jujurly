@@ -10,13 +10,9 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/index.html");
 });
 
-//  Response 404 Page
-app.use(function(req, res, next){
-  if (req.accepts('html')) {
-    res.sendFile(__dirname + '/404.html');
-    return;
-  }
-});
+module.exports = (req, res) => {
+  res.status(404).json({ message: 'Not Found' });
+};
 
 
 app.use(
