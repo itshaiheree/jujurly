@@ -10,9 +10,6 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/index.html");
 });
 
-module.exports = (req, res) => {
-  res.status(404).json({ message: 'Not Found' });
-};
 
 
 app.use(
