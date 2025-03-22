@@ -4,7 +4,6 @@ const router = express.Router();
 
 const path = require('path')
 const execSync = require('child_process').execSync;
-const P = require('pino')
 const fetch = require('node-fetch')
 
 const {default: makeWASocket } = require('baileys')
