@@ -6,52 +6,19 @@ const path = require('path')
 const execSync = require('child_process').execSync;
 const P = require('pino')
 const fetch = require('node-fetch')
-const { 
-default: makeWASocket, 
-DisconnectReason, 
-AnyMessageContent, 
-delay,
-proto,
-jidDecode,
-useMultiFileAuthState,
-generateForwardMessageContent, 
-generateWAMessageFromContent,
-downloadContentFromMessage, 
-generateMessageID,
-makeInMemoryStore
-} = require('baileys')
-const baileys = require('baileys')
-const fs = require("fs")
-const fsx = require('fs-extra')
-const axios = require('axios')
-const { Boom } = require("@hapi/boom")
-const { state, loadState, saveState } = useMultiFileAuthState("chan-session")
-const store = makeInMemoryStore({ logger: P().child({ level: 'silent', stream: 'store' }) })
 
-const getVersionWaweb = () => {
-    let version
-    try {
-        let { data } = axios.get('https://web.whatsapp.com/check-update?version=1&platform=web')
-        version = [data.currentVersion.replace(/[.]/g, ', ')]
-    } catch {
-        version = [2, 2204, 13]
-    }
-    return version
-}
+import makeWASocket from 'baileys'
+import P from 'pino'
 
-const startSock = () => {
-const chan = makeWASocket({
-    logger: P({ level: 'fatal' }),
-    printQRInTerminal: true,
-    auth: state,
-    browser: ['Bot "confess"',"Safari","1.0.0"],
-    version: getVersionWaweb() || [2, 2204, 13]
+const sock = makeWASocket({
+  auth: state,
+  logger: P() // you can configure this as much as you want, even including streaming the logs to a ReadableStream for upload or saving to a file
 })
 
 // you can use this package to export a base64 image or a canvas element.
-const QRCode = require('qrcode')
+import QRCode from 'qrcode'
 
-chan.ev.on('connection.update', async (update) => {
+sock.ev.on('connection.update', async (update) => {
   const {connection, lastDisconnect, qr } = update
   // on a qr event, the connection and lastDisconnect fields will be empty
 
@@ -62,10 +29,14 @@ chan.ev.on('connection.update', async (update) => {
   }
 })
 
+// DO NOT USE IN PROD!!!!
+const { state, saveCreds } = await useMultiFileAuthState("auth_info_baileys");
+// this will be called as soon as the credentials are updated
 sock.ev.on("creds.update", saveCreds);
-}
 
-startSock()
+const fs = require("fs")
+const fsx = require('fs-extra')
+
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
