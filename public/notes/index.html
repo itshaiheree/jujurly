@@ -69,9 +69,39 @@
 <script>
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('spotify-embed-iframe');
+
+  const userAgent = navigator.userAgent;
+
+if (/Mobi|Android/i.test(userAgent)) {
+    
   const options = {
-      uri: 'spotify:episode:7makk4oTQel546B0PZlDM5'
+      width: 300,
+      height: 100,
+      uri: 'https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y'
     };
+
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  } else if (/Tablet|iPad/i.test(userAgent)) {
+  const options = {
+      width: 400,
+      height: 100,
+      uri: 'https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y'
+    };
+
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  } else {
+  const options = {
+      width: 800,
+      height: 100,
+      uri: 'https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y'
+    };
+    
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  }
+
   const callback = (EmbedController) => {};
   IFrameAPI.createController(element, options, callback);
 };
