@@ -54,10 +54,14 @@
 </div>
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
-            <h2 class="card-title">from: dummy\nto:dummy</h2>
-            <p>This is dummy message, only for develope purpose</p>
-
+        <h1 class="text-2xl font-bold text-center">Sebuah pesan,</h1>
+        <h2 class="text-xl font-bold text-center mt-10">from: dummy</h2>
+        <h2 class="text-xl font-bold text-center">to:dummy</h2>
+        <p class="text-l font-bold text-center mt-3">This is dummy message, only for develope purpose</p>
+            <br />
+            <div class="flex justify-center">
             <div id="spotify-embed-iframe"></div>
+            </div>
 </div>
 <br />
 </body>
@@ -93,7 +97,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   IFrameAPI.createController(element, options, callback);
   } else {
   const options = {
-      width: 800,
+      width: 900,
       height: 100,
       uri: 'https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y'
     };
