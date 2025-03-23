@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+.align-icon-middle {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6C63FF), to(#7672bd));
+  background: linear-gradient(#6C63FF 0%, #7672bd 100%);
+  width: 150px;
+  height: 5px;
+  margin-bottom: 10px !important;
+}
+
+.line2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#6C63FF), to(#7672bd));
+  background: linear-gradient(#6C63FF 0%, #7672bd 100%);
+  width: 75px;
+  height: 5px;
+  margin-bottom: 10px !important;
+}
+
+.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+
+.vert-move2 {
+  -webkit-animation: mover .5s infinite  alternate;
+  animation: mover .5s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99;
+}
+
+#status {
+  height: 50px;
+  width: 50px;
+  margin: 40vh auto;
+  border: 5px solid rgb(74, 72, 73, 0.45);
+  border-top: 5px solid rgb(74, 72, 73);
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#backtotop {
+  display: inline-block;
+  background-color: #7289DA;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+#backtotop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#backtotop:active {
+  background-color: #555;
+}
+#backtotop.show {
+  opacity: 0.4;
+  visibility: visible;
+}
+
+img.responsive {
+  max-width: 100%;
+  height: auto;
+}
