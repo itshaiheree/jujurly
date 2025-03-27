@@ -69,11 +69,11 @@ app.get("/", function(request, response) {
 
           <li><a href="/">Homepage</a></li>
 
-          <li><a href="/papan">Papapn Pengakuan</a></li>
+          <li><a href="/board">Board Notes</a></li>
 
-          <li><a href="/contribute">Kontribusi & Donasi</a></li>
+          <li><a href="/contribute">Contributions & Donations</a></li>
 
-          <li><a href="/report">Lapor & Request</a></li>
+          <li><a href="/report">Report & Request</a></li>
 
         </ul>
 
@@ -83,7 +83,7 @@ app.get("/", function(request, response) {
 
     <div class="navbar-center">
 
-      <a href="/" class="btn btn-ghost text-xl">Jujurly</a>
+      <a href="/" class="btn btn-ghost text-xl">SendANotes</a>
 
     </div>
 
@@ -92,9 +92,7 @@ app.get("/", function(request, response) {
           <a href="/new"><i class="fa-solid fa-plus"></i></a>
         </div>
         </div>
-
     </div>
-
 </div>
 
 
@@ -339,28 +337,53 @@ app.get("/notes", function(req, res) {
   </head>
 
 <body>
+
 <div class="navbar bg-base-100 sticky top-0 backdrop-blur-none shadow-sm">
+
     <div class="navbar-start">
+
       <div class="dropdown">
+
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+
         </div>
+
         <ul
+
           tabindex="0"
+
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
           <li><a href="/">Homepage</a></li>
-          <li><a href="/board">Papapn Pengakuan</a></li>
-          <li><a href="/contribute">Kontribusi & Donasi</a></li>
-          <li><a href="/report">Lapor & Request</a></li>
+
+          <li><a href="/board">Board Notes</a></li>
+
+          <li><a href="/contribute">Contributions & Donations</a></li>
+
+          <li><a href="/report">Report & Request</a></li>
+
         </ul>
+
       </div>
+
     </div>
+
     <div class="navbar-center">
+
       <a href="/" class="btn btn-ghost text-xl">SendANotes</a>
+
     </div>
+
     <div class="navbar-end">
+        <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
           <a href="/new"><i class="fa-solid fa-plus"></i></a>
+        </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
     <div class="max-w-2xl mx-auto py-5 px-4">
