@@ -1,6 +1,7 @@
 var express = require("express");
 const fetch = require('node-fetch');
 var app = express();
+const path = require("path");
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -329,7 +330,7 @@ app.get("/", function(request, response) {
 //  Response 404 Page
 app.use(function(req, res, next){
   if (req.accepts('html')) {
-res.sendFile(__dirname + '/index.html');
+res.sendFile(path.resolve(app.get('appPath') + '/index.html'))
     return;
   }
 });
