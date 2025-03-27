@@ -7,12 +7,17 @@ var app = express();
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile("./index.html");
+  response.sendFile(__dirname + "/index.html");
 });
 
+//  Response 404 Page
 app.use(function(req, res, next){
-  response.sendFile("./public/404.html");
+  if (req.accepts('html')) {
+    res.sendFile(__dirname + '/public/404.html');
+    return;
+  }
 });
+
 
 app.use(
   (request, response, next) => {
