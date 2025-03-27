@@ -25,7 +25,7 @@ app.get("/", function(request, response) {
 
     <meta name="mazen" content="true" />
 
-    <title>SendANotes - SEND YOUR NOTES!</title>
+    <title>SendANote - SEND YOUR NOTES!</title>
 
 
 
@@ -50,43 +50,22 @@ app.get("/", function(request, response) {
 <body>
 
 <div class="navbar bg-base-100 sticky top-0 backdrop-blur-none shadow-sm">
-
     <div class="navbar-start">
-
       <div class="dropdown">
-
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
-
         </div>
-
-        <ul
-
-          tabindex="0"
-
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
           <li><a href="/">Homepage</a></li>
-
           <li><a href="/board">Board Notes</a></li>
-
           <li><a href="/contribute">Contributions & Donations</a></li>
-
           <li><a href="/report">Report & Request</a></li>
-
         </ul>
-
       </div>
-
     </div>
-
     <div class="navbar-center">
-
-      <a href="/" class="btn btn-ghost text-xl">SendANotes</a>
-
+      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
     </div>
-
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
           <a href="/new"><i class="fa-solid fa-plus"></i></a>
@@ -101,9 +80,9 @@ app.get("/", function(request, response) {
 
   <section id="top">
 
-    <h1 class="text-5xl font-bold text-center mt-10">INI WAKTUNYA CONFESS!</h1>
+    <h1 class="text-5xl font-bold text-center mt-10">Send A Notes To Someone</h1>
 
-    <p class="text-center mt-5">Jujur itu penting dan gak boleh di tunda! Buat pengakuanmu dan kirim ke orangnya sekarang!</p>
+    <p class="text-center mt-5">Express Your Feel By A Notes</p>
 
     <br />
 
@@ -111,9 +90,9 @@ app.get("/", function(request, response) {
 
       <div class="grid grid-cols-1 gap-y-3 gap-x-6 sm:grid-cols-2 xl:gap-x-8">
 
-        <a href="/new" class="btn btn-active btn-info w-auto">Buat Confess Sekarang</a>
+        <a href="/new" class="btn btn-active btn-info w-auto">Make A Note</a>
 
-        <a href="/check" class="btn btn-outline btn-error w-auto">Cek Respon Confess</a>
+        <a href="/check" class="btn btn-outline btn-error w-auto">Search A Note</a>
 
       </div>
 
@@ -339,43 +318,22 @@ app.get("/notes", function(req, res) {
 <body>
 
 <div class="navbar bg-base-100 sticky top-0 backdrop-blur-none shadow-sm">
-
     <div class="navbar-start">
-
       <div class="dropdown">
-
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
-
         </div>
-
-        <ul
-
-          tabindex="0"
-
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-
+        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
           <li><a href="/">Homepage</a></li>
-
           <li><a href="/board">Board Notes</a></li>
-
           <li><a href="/contribute">Contributions & Donations</a></li>
-
           <li><a href="/report">Report & Request</a></li>
-
         </ul>
-
       </div>
-
     </div>
-
     <div class="navbar-center">
-
-      <a href="/" class="btn btn-ghost text-xl">SendANotes</a>
-
+      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
     </div>
-
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
           <a href="/new"><i class="fa-solid fa-plus"></i></a>
