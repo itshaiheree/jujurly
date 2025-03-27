@@ -330,7 +330,7 @@ app.get("/", function(request, response) {
 //  Response 404 Page
 app.use(function(req, res, next){
   if (req.accepts('html')) {
-res.sendFile(path.resolve(app.get('appPath') + '/index.html'))
+res.sendFile(res.sendFile(path.join(__dirname, '../public', '404.html'));
     return;
   }
 });
