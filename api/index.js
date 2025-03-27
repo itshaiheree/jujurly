@@ -479,7 +479,7 @@ if (/Mobi|Android/i.test(userAgent)) {
 };
 </script>
   `)
-}
+})
 
 
 
