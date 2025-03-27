@@ -25,7 +25,7 @@ app.get("/", function(request, response) {
 
     <meta name="mazen" content="true" />
 
-    <title>Jujurly - WAKTUNYA CONFESS!</title>
+    <title>SendANotes - SEND YOUR NOTES!</title>
 
 
 
@@ -88,28 +88,10 @@ app.get("/", function(request, response) {
     </div>
 
     <div class="navbar-end">
-
-      <div class="dropdown dropdown-end">
-
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
-
-          <i class="fa-solid fa-plus"></i>
-
+          <a href="/new"><i class="fa-solid fa-plus"></i></a>
         </div>
-
-        <ul
-
-          tabindex="0"
-
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-
-          <li><a href="/new">Buat Confess Sekarang</a></li>
-
-          <li><a href="/check">Cek Respon Confess</a></li>
-
-        </ul>
-
-      </div>
+        </div>
 
     </div>
 
