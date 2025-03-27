@@ -329,7 +329,7 @@ app.get("/", function(request, response) {
 //  Response 404 Page
 app.use(function(req, res, next){
   if (req.accepts('html')) {
-    res.sendFile('public/404.html');
+    res.sendFile('public/404.html', { root: __dirname });
     return;
   }
 });
