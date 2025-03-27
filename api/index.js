@@ -7,11 +7,11 @@ var app = express();
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/index.html");
+  response.sendFile("./index.html");
 });
 
 app.use(function(req, res, next){
-  res.send('404: Page not Found', 404);
+  response.sendFile("./public/404.html");
 });
 
 app.use(
