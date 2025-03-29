@@ -62,8 +62,8 @@ app.get("/", function(request, response) {
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
   <section id="top">
-    <h1 class="text-5xl font-bold text-center mt-10">Send A Notes To Someone</h1>
-    <p class="text-center mt-5">Express Your Feel By A Notes</p>
+    <h1 class="text-5xl font-bold text-center mt-10">Send A Note</h1>
+    <p class="text-center mt-5">Express Your Feelings With A Note</p>
     <br />
     <div class="card-actions justify-center">
       <div class="grid grid-cols-1 gap-y-3 gap-x-6 sm:grid-cols-2 xl:gap-x-8">
@@ -155,7 +155,7 @@ app.get("/", function(request, response) {
 
   <aside>
 
-    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/jujurly">Star Us on Github</a></p>
+    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/sendanote">Star Us on Github</a></p>
 
   </aside>
 
@@ -278,7 +278,7 @@ app.get("/notes", function(req, res) {
 </body>
 <footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
   <aside>
-    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/jujurly">Star Us on Github</a></p>
+    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/sendanote">Star Us on Github</a></p>
   </aside>
 </footer>
 <script>
