@@ -61,8 +61,8 @@ app.get("/", function(request, response) {
 
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
-  <section id="top">
-    <h1 class="text-5xl font-bold text-center mt-10"Express Your Feelings With A Note</h1>
+  <section id="top" class="mt-[10px]">
+    <h1 class="text-5xl font-bold text-center mt-10">Express Your Feelings With A Note</h1>
     <p class="text-center mt-5">Share your untold feelings with a note</p>
     <br />
     <div class="card-actions justify-center">
