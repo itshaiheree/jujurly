@@ -48,7 +48,7 @@ app.get("/", function(request, response) {
       </div>
     </div>
     <div class="navbar-center">
-    <a href="/"><h1 class="btn btn-ghost text-xl">Send a Note</h1></a>
+      <a href="/" class="btn btn-ghost text-xl"><h1>Send a Note</h1></a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
@@ -61,8 +61,8 @@ app.get("/", function(request, response) {
 
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
-  <section id="top" class="mt-[10px]>
-    <h1 class="text-5xl font-bold text-center mt-10">Express Your Feelings With A Note</h1>
+  <section id="top">
+    <h1 class="text-5xl font-bold text-center mt-10"Express Your Feelings With A Note</h1>
     <p class="text-center mt-5">Share your untold feelings with a note</p>
     <br />
     <div class="card-actions justify-center">
@@ -77,8 +77,8 @@ app.get("/", function(request, response) {
 
 <br />
 
-<section id="board">
-  <div class="bg-[#DAA06D] text-black rounded-2xl w-full flex flex-nowrap">
+<section id="papan">
+  <div class="bg-[#DAA06D] text-black rounded-2xl w-full">
     <div class="card-body">
       <h2 class="card-title text-2xl font-bold justify-center">#NitipPesan [UNDER DEVELOPMENT]</h2>
       <p class="flex justify-center">Punya pesan buat seseorang? Atau mau cari pesan punyamu? Cek di #NitipPesan aja!</p>
@@ -209,7 +209,7 @@ app.get("/notes", function(req, res) {
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/"><h1 class="btn btn-ghost text-xl">Send a Note</h1></a>
+      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
