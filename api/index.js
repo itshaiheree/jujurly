@@ -83,7 +83,7 @@ app.get("/", function(request, response) {
       <h2 class="card-title text-2xl font-bold justify-center">#NitipPesan [UNDER DEVELOPMENT]</h2>
       <p class="flex justify-center">Punya pesan buat seseorang? Atau mau cari pesan punyamu? Cek di #NitipPesan aja!</p>
       <div class="max-w-2xl mx-auto py-5 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
-      <div class="flex flex-nowrap">
+      <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 flex flex-nowrap">
           <div class="rounded-xl bg-[#E1C16E] w-full">
             <div class="card-body">
               <h2 class="card-title">Papan Pengakuan</h2>
