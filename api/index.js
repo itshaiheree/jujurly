@@ -48,7 +48,7 @@ app.get("/", function(request, response) {
       </div>
     </div>
     <div class="navbar-center">
-      <h1><a href="/" class="btn btn-ghost text-xl">Send a Note</a></h1>
+    <a href="/"><h1 class="btn btn-ghost text-xl">Send a Note</h1></a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
@@ -61,7 +61,7 @@ app.get("/", function(request, response) {
 
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
-  <section id="top" class="mt-[10px]">
+  <section id="top" class="mt-[10px]>
     <h1 class="text-5xl font-bold text-center mt-10">Express Your Feelings With A Note</h1>
     <p class="text-center mt-5">Share your untold feelings with a note</p>
     <br />
@@ -209,7 +209,7 @@ app.get("/notes", function(req, res) {
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
+      <a href="/"><h1 class="btn btn-ghost text-xl">Send a Note</h1></a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
