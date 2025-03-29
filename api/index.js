@@ -11,14 +11,14 @@ app.get("/", function(request, response) {
   response.send(`
   <!DOCTYPE html>
 
-<html lang="id">
+<html data-theme="light" lang="id">
   <head>
     <link rel="icon" href="./logo.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="sendanote" content="true" />
 
-    <title>SendANote - SEND YOUR NOTES!</title>
+    <title>Send a Note - SEND YOUR NOTES!</title>
 
     <link rel="stylesheet" href="./style.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css" rel="stylesheet" type="text/css" />
@@ -48,7 +48,7 @@ app.get("/", function(request, response) {
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
+      <h1><a href="/" class="btn btn-ghost text-xl">Send a Note</a></h1>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
@@ -62,8 +62,8 @@ app.get("/", function(request, response) {
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
   <section id="top">
-    <h1 class="text-5xl font-bold text-center mt-10">Send A Note</h1>
-    <p class="text-center mt-5">Express Your Feelings With A Note</p>
+    <h1 class="text-5xl font-bold text-center mt-10"Express Your Feelings With A Note</h1>
+    <p class="text-center mt-5">Share your untold feelings with a note</p>
     <br />
     <div class="card-actions justify-center">
       <div class="grid grid-cols-1 gap-y-3 gap-x-6 sm:grid-cols-2 xl:gap-x-8">
@@ -77,8 +77,8 @@ app.get("/", function(request, response) {
 
 <br />
 
-<section id="papan">
-  <div class="bg-[#DAA06D] text-black rounded-2xl w-full">
+<section id="board">
+  <div class="bg-[#DAA06D] text-black rounded-2xl w-full flex flex-nowrap">
     <div class="card-body">
       <h2 class="card-title text-2xl font-bold justify-center">#NitipPesan [UNDER DEVELOPMENT]</h2>
       <p class="flex justify-center">Punya pesan buat seseorang? Atau mau cari pesan punyamu? Cek di #NitipPesan aja!</p>
