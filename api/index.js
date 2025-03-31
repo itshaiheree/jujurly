@@ -224,9 +224,11 @@ app.get("/notes", function(req, res) {
     <div class="max-w-2xl mx-auto py-5 px-4">
     <div class="rounded-xl bg-[#E1C16E] w-full">
         <div class="card-body text-black">
+            <div class="handtext">
             <h2 class="text-xl font-bold">from: ${senderName}</h2>
             <h2 class="text-xl font-bold">to: ${senderTarget}</h2>
             <p class="text-l mt-3">${senderMsg}</p>
+            </div>
                 <div class="${senderSongVisibility} flex mt-4">
                 <div id="spotify-embed-iframe"></div>
                 </div>
