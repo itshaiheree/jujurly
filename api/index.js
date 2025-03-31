@@ -173,7 +173,7 @@ app.get("/notes", function(req, res) {
   
   res.send(`
   <!DOCTYPE html>
-<html lang="id">
+<html data-theme="light" lang="en">
 
   <head>
     <link rel="icon" href="./logo.png" type="image/x-icon" />
@@ -209,7 +209,7 @@ app.get("/notes", function(req, res) {
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
+      <a href="/" class="btn btn-ghost text-xl"><h1>Send a Note</h1></a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
