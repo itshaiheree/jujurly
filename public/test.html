@@ -112,7 +112,6 @@
 <script>
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('spotify-embed-iframe');
-  const senderSong = "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y"
   const userAgent = navigator.userAgent;
 
 if (/Mobi|Android/i.test(userAgent)) {
@@ -120,7 +119,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 250,
       height: 100,
-      uri: senderSong
+      uri: "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y"
     };
 
   const callback = (EmbedController) => {};
@@ -129,7 +128,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 400,
       height: 100,
-      uri: senderSong
+      uri: "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y"
     };
 
   const callback = (EmbedController) => {};
@@ -138,7 +137,8 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 900,
       height: 100,
-      uri: senderSong}
+      uri: "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y"
+  }
     };
     
   const callback = (EmbedController) => {};
