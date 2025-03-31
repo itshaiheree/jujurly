@@ -1,0 +1,65 @@
+              <h2 class="card-title">Papan Pengakuan</h2>
+              <p>Papan Yang Isinya Segala Macam Pengakuan Warga Bumi</p>
+            </div>
+          </div>
+  
+          <div class="rounded-xl bg-[#E1C16E] w-full">
+            <div class="card-body">
+              <h2 class="card-title">Papan Pengakuan</h2>
+              <p>Papan Yang Isinya Segala Macam Pengakuan Warga Bumi</p>
+            </div>
+          </div>
+  
+          <div class="rounded-xl bg-[#E1C16E] w-full">
+            <div class="card-body">
+              <h2 class="card-title">Papan Pengakuan</h2>
+              <p>Papan Yang Isinya Segala Macam Pengakuan Warga Bumi</p>
+            </div>
+          </div>
+        </div>
+        </div>
+</div>
+<br />
+</body>
+<footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+  <aside>
+    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/sendanote">Star Us on Github</a></p>
+  </aside>
+</footer>
+<script>
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  const element = document.getElementById('spotify-embed-iframe');
+  const senderSong = "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y"
+  const userAgent = navigator.userAgent;
+
+if (/Mobi|Android/i.test(userAgent)) {
+    
+  const options = {
+      width: 250,
+      height: 100,
+      uri: senderSong
+    };
+
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  } else if (/Tablet|iPad/i.test(userAgent)) {
+  const options = {
+      width: 400,
+      height: 100,
+      uri: senderSong
+    };
+
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  } else {
+  const options = {
+      width: 900,
+      height: 100,
+      uri: senderSong}
+    };
+    
+  const callback = (EmbedController) => {};
+  IFrameAPI.createController(element, options, callback);
+  }
+};
+</script>
