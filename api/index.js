@@ -276,11 +276,6 @@ app.get("/notes", function(req, res) {
 </div>
 <br />
 </body>
-<footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
-  <aside>
-    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/sendanote">Star Us on Github</a></p>
-  </aside>
-</footer>
 <script>
 window.onSpotifyIframeApiReady = (IFrameAPI) => {
   const element = document.getElementById('spotify-embed-iframe');
@@ -318,6 +313,11 @@ if (/Mobi|Android/i.test(userAgent)) {
   }
 };
 </script>
+<footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+  <aside>
+    <p>Copyright © 2025 - All right reserved by Always Lazy To Code | <a class="link link-primary" href="https://github.com/itshaiheree/sendanote">Star Us on Github</a></p>
+  </aside>
+</footer>
   `)
 })
 
