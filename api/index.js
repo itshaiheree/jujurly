@@ -165,23 +165,22 @@ app.get("/", function(request, response) {
 
 // notes render
 app.get("/notes", function(req, res) {
-  const senderName = "Yanto";
+    const senderName = "Yanto";
   const senderTarget = "Yanti";
   const senderMsg = "bijiq";
   const senderSongVisibility = "inline";
   const senderSong = "https://open.spotify.com/intl-id/track/0iKhHZMZfdaDmdlxF7jS2y";
   
   res.send(`
-<!DOCTYPE html>
+  <!DOCTYPE html>
+<html lang="id">
 
-<html data-theme="light" lang="en">
   <head>
     <link rel="icon" href="./logo.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="sendanote" content="true" />
-
-    <title>${senderName}'s Notes - Send a Note</title>
+    <meta name="mazen" content="true" />
+    <title>${senderName}'s Notes - SendANotes</title>
 
     <link rel="stylesheet" href="./style.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css" rel="stylesheet" type="text/css" />
@@ -190,9 +189,8 @@ app.get("/notes", function(req, res) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c2165b4022.js" crossorigin="anonymous"></script>
+    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
   </head>
-
-
 
 <body>
 
@@ -211,7 +209,7 @@ app.get("/notes", function(req, res) {
       </div>
     </div>
     <div class="navbar-center">
-      <a href="/" class="btn btn-ghost text-xl"><h1>Send a Note</h1></a>
+      <a href="/" class="btn btn-ghost text-xl">SendANote</a>
     </div>
     <div class="navbar-end">
         <div tabindex="0" role="button" class="text-current btn btn-ghost btn-circle">
@@ -220,6 +218,7 @@ app.get("/notes", function(req, res) {
         </div>
     </div>
 </div>
+
 
 <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
     <div class="max-w-2xl mx-auto py-5 px-4">
@@ -321,7 +320,6 @@ if (/Mobi|Android/i.test(userAgent)) {
 </script>
   `)
 })
-
 
 
 
