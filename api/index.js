@@ -166,9 +166,12 @@ app.get("/", function(request, response) {
 // notes render
 app.get("/notes/:id", function(req, res) {
   const id = req.params.id;
-  
+
   (async () => {
   try {
+  const response = await fetch(`https://sendanote-noteserver.vercel.app/api/note/get?id=${id}`)
+  const data = await response.json()
+
   if (data.status === "failed"){
     res.send(`
       <!DOCTYPE html>
@@ -280,9 +283,6 @@ app.get("/notes/:id", function(req, res) {
     </footer>
       `)
   }
-
-  const response = await fetch(`https://sendanote-noteserver.vercel.app/api/note/get?id=${id}`)
-  const data = await response.json()
 
   const senderName = data.senderName;
   const senderTarget = data.receiver;
