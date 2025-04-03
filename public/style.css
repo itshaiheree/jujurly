@@ -8,10 +8,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-family: "Indie Flower", cursive;
   font-weight: 400;
-  font-style: normal;
+}
+
+.handtext {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
 }
 
 
