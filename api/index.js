@@ -327,11 +327,11 @@ if (/Mobi|Android/i.test(userAgent)) {
 </footer>
   `)
   } catch (error) {
-    const senderName = "budi";
-  const senderTarget = "sarmiji";
-  const senderMsg = "p, mabar";
-  const senderSongVisibility = "inline";
-  const senderSong = "https://open.spotify.com/track/0puyuBqmptiuq0K9ecvdW8?si=cAcc4N9LTGWkwNnSOtFlOg&context=spotify%3Aalbum%3A4bhftzHgTYXc9xy27QsryO";
+    const senderNames = "budi";
+  const senderTargets = "sarmiji";
+  const senderMsgs = "p, mabar";
+  const senderSongVisibilitys = "inline";
+  const senderSongs = "https://open.spotify.com/track/0puyuBqmptiuq0K9ecvdW8?si=cAcc4N9LTGWkwNnSOtFlOg&context=spotify%3Aalbum%3A4bhftzHgTYXc9xy27QsryO";
   
   res.send(`
   <!DOCTYPE html>
@@ -342,7 +342,7 @@ if (/Mobi|Android/i.test(userAgent)) {
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="mazen" content="true" />
-    <title>${senderName}'s Notes - SendANotes</title>
+    <title>${senderNames}'s Notes - SendANotes</title>
 
     <link rel="stylesheet" href="./style.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.3/dist/full.css" rel="stylesheet" type="text/css" />
@@ -386,10 +386,10 @@ if (/Mobi|Android/i.test(userAgent)) {
     <div class="max-w-2xl mx-auto py-5 px-4">
     <div class="rounded-xl bg-[#E1C16E] w-full">
         <div class="card-body text-black">
-            <h2 class="text-xl font-bold">from: ${senderName}</h2>
-            <h2 class="text-xl font-bold">to: ${senderTarget}</h2>
-            <p class="text-l mt-3">${senderMsg}</p>
-                <div class="${senderSongVisibility} flex mt-4">
+            <h2 class="text-xl font-bold">from: ${senderNames}</h2>
+            <h2 class="text-xl font-bold">to: ${senderTargets}</h2>
+            <p class="text-l mt-3">${senderMsgs}</p>
+                <div class="${senderSongVisibilitys} flex mt-4">
                 <div id="spotify-embed-iframe"></div>
                 </div>
         </div>
@@ -449,7 +449,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 250,
       height: 100,
-      uri: '${senderSong}'
+      uri: '${senderSongs}'
     };
 
   const callback = (EmbedController) => {};
@@ -458,7 +458,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 400,
       height: 100,
-      uri: '${senderSong}'
+      uri: '${senderSongs}'
     };
 
   const callback = (EmbedController) => {};
@@ -467,7 +467,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   const options = {
       width: 900,
       height: 100,
-      uri: '${senderSong}'
+      uri: '${senderSongs}'
     };
     
   const callback = (EmbedController) => {};
