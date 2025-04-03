@@ -165,6 +165,7 @@ app.get("/", function(request, response) {
 
 // notes render
 app.get("/notes/:id", function(req, res) {
+  (async () => {
   try {
   const id = req.params.id;
 
@@ -328,6 +329,7 @@ if (/Mobi|Android/i.test(userAgent)) {
   } catch (error) {
     console.log(error.response.body);
   }
+})();
 })
 
 
