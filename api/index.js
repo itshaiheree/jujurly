@@ -386,7 +386,7 @@ if (/Mobi|Android/i.test(userAgent)) {
     <div class="max-w-2xl mx-auto py-5 px-4">
     <div class="rounded-xl bg-[#E1C16E] w-full">
         <div class="card-body text-black">
-            <h2 class="text-xl font-bold">from: ${senderNames}</h2>
+            <h2 class="text-xl font-bold">from: p</h2>
             <h2 class="text-xl font-bold">to: ${senderTargets}</h2>
             <p class="text-l mt-3">${senderMsgs}</p>
                 <div class="${senderSongVisibilitys} flex mt-4">
