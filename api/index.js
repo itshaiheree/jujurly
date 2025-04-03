@@ -223,8 +223,9 @@ app.get("/notes/:id", function(req, res) {
         <div class="max-w-2xl mx-auto py-5 px-4">
         <div class="rounded-xl bg-[#E1C16E] w-full">
             <div class="card-body text-black">
-                <h2 class="text-xl font-bold">The note you're looking for doesn't available}</h2>
-                </div>
+                <h2 class="text-xl font-bold">The note you're looking for doesn't available</h2>
+                <p class="text-l mt-3">The ${id} note doesn't available, try to look another note bellow!</p>
+            </div>
           </div>
     
           <div class="">
@@ -491,8 +492,9 @@ if (/Mobi|Android/i.test(userAgent)) {
         <div class="max-w-2xl mx-auto py-5 px-4">
         <div class="rounded-xl bg-[#E1C16E] w-full">
             <div class="card-body text-black">
-                <h2 class="text-xl font-bold">The note you're looking for doesn't available}</h2>
-                </div>
+                <h2 class="text-xl font-bold">The note you're looking for doesn't available</h2>
+                <p class="text-l mt-3">The ${id} note doesn't available, try to look another note bellow!</p>
+            </div>
           </div>
     
           <div class="">
