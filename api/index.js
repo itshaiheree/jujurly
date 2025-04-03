@@ -169,7 +169,7 @@ app.get("/notes/:id", function(req, res) {
   try {
   const id = req.params.id;
 
-  const response = await fetch(`https://sendanote-noteserver.vercel.app/api/note/get?id=1`)
+  const response = await fetch(`https://sendanote-noteserver.vercel.app/api/note/get?id=${id}`)
   const data = await response.json()
 
   const senderName = data.senderName;
