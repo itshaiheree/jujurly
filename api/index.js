@@ -165,10 +165,10 @@ app.get("/", function(request, response) {
 
 // notes render
 app.get("/notes/:id", function(req, res) {
-  (async () => {
-  try {
   const id = req.params.id;
   
+  (async () => {
+  try {
   if (data.status === "failed"){
     res.send(`
       <!DOCTYPE html>
