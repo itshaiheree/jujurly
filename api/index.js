@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 var app = express();
 const path = require("path");
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb+srv://${process.env.dbUsername}:${process.env.dbPassword}@${process.env.dbLink}?retryWrites=true&w=majority`);
+mongoose.connect(`mongodb://${process.env.dbUsername}:${process.env.dbPassword}@${process.env.dbLink}?retryWrites=true&w=majority`);
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
