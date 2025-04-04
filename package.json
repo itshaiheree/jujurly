@@ -21,7 +21,7 @@
       "axios": "latest",
       "qrcode": "latest",
       "fs-extra": "latest",
-      "mongodb": "latest"
+      "mongoose": "latest"
     },
     "devDependencies": {
         "tailwindcss": "^3.4.1",
