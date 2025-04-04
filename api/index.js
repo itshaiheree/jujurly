@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 var app = express();
 const path = require("path");
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var url = "mongodb://admin:IQEZN5WT5NYN28XA@dono-03.danbot.host:4904/";
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
