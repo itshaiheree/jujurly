@@ -17,7 +17,7 @@ const UsersSchema = new mongoose.Schema(
   { versionKey: false, timestamps: true }
 );
 
-module.exports.Note = mongoose.model("Note", UsersSchema);
+let Note = mongoose.model("Note", UsersSchema);
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
