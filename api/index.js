@@ -5,6 +5,20 @@ const path = require("path");
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb://${process.env.dbUsername}:${process.env.dbPassword}@${process.env.dbLink}?retryWrites=true&w=majority`);
 
+const UsersSchema = new mongoose.Schema(
+  {
+    id: { type: String, required: true },
+    senderName: { type: String, required: true },
+    receiver: { type: String, required: true },
+    msg: { type: String, required: true },
+    musicAvailable: { type: String, required: true },
+    musicLink: { type: String, required: true }
+  },
+  { versionKey: false, timestamps: true }
+);
+
+module.exports.Note = mongoose.model("Note", UsersSchema);
+
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -171,12 +185,9 @@ app.get("/notes/:id", function(req, res) {
 
   (async () => {
   try {
-    //const idmodel = mongoose.model('sendanote', { name: String });
-    //await idmodel.find({ name: `${id}` }).exec()
-  const response = await fetch(`https://sendanote-noteserver.vercel.app/api/note/get?id=${id}`)
-  const data = await response.json()
+  let data = Note.findOne({ id: `${id}` });
 
-  if (data.status === "failed"){
+  if (data === null){
     res.send(`
       <!DOCTYPE html>
     <html data-theme="light" lang="en">
