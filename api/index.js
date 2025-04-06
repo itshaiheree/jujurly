@@ -318,15 +318,15 @@ app.get("/notes/new", function(req, res) {
   
   
   <div class="ml-[30px] mr-[30px] md:ml-[50px] md:mr-[50px]">
-    <section id="top">
+    <section id="top" style="text-center">
       <h1 class="text-5xl font-bold text-center mt-10">Send Your Note!</h1>
       <p class="text-center mt-5">It's nice to see you're here to send your feelings!</p>
       <br />
       <fieldset class="fieldset">
         <p id="errorMsg" style="display:none" class="validator-hint">
           Please fill all of the required (*) fields
+          <br />
         </p>
-        <br />
         <legend class="fieldset-legend">Sender Name</legend>
         <input id="sender" type="text" class="input" placeholder="Budi Tarmiji" />
         <p class="fieldset-label">Optional</p>
@@ -339,7 +339,7 @@ app.get("/notes/new", function(req, res) {
         <input id="link" type="text" class="input" placeholder="https://open.spotify.com/track/0puyuBqmptiuq0K9ecvdW8?si=cAcc4N9LTGWkwNnSOtFlOg&context=spotify%3Aalbum%3A4bhftzHgTYXc9xy27QsryO" required />
         <p class="fieldset-label">Leave it blank if you doesn't want to add a music</p>
         <br />
-        <button class="btn btn-outline">Default</button>
+        <button id="buttonPost" class="btn btn-outline">Post It!</button>
       </fieldset>
       </div>
   </section>
@@ -359,6 +359,8 @@ app.get("/notes/new", function(req, res) {
   </footer>
 
   <script>
+  $(document).ready(function(){
+  $("#buttonPost").click(function(){
     var x = document.getElementById("sender").value;
     var y = document.getElementById("recipient").value;
     var z = document.getElementById("msg").value;
@@ -369,9 +371,7 @@ app.get("/notes/new", function(req, res) {
       document.getElementById("errorMsg").style.display = "block";
     } else {
      if (a == ""){
-      $(document).ready(function(){
-        $("button").click(function(){
-          $.post("demo_test_post.asp",
+          $.post("./notes/new",
             {
               sender: x,
               receiver: y,
@@ -384,12 +384,8 @@ app.get("/notes/new", function(req, res) {
 
               location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
           });
-        });
-      });
       } else {
-        $(document).ready(function(){
-        $("button").click(function(){
-          $.post("demo_test_post.asp",
+          $.post("./notes/new,
             {
               sender: x,
               receiver: y,
@@ -402,9 +398,8 @@ app.get("/notes/new", function(req, res) {
 
               location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
           });
-        });
-      });
     }
+  })});
   </script>
     `)
 })
