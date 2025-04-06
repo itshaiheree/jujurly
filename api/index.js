@@ -20,7 +20,7 @@ const UsersSchema = new mongoose.Schema(
 let Note = mongoose.model("Note", UsersSchema);
 
 async function getNote(id) {
-  let ids = await Note.findOne({ id: id });
+  let ids = await Note.findOne({ id: id }).exec();;
   if (ids !== null) {
     return ids;
   } else {
