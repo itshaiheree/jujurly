@@ -359,47 +359,51 @@ app.get("/notes/new", function(req, res) {
   </footer>
 
   <script>
-  $(document).ready(function(){
-  $("#buttonPost").click(function(){
-    var x = document.getElementById("sender").value;
-    var y = document.getElementById("recipient").value;
-    var z = document.getElementById("msg").value;
-    var a = document.getElementById("link").value;
-
-    if (x == "" || y == "" || z == "") {
-      document.getElementById("errorMsg").innerHTML = "Please fill all the fields";
-      document.getElementById("errorMsg").style.display = "block";
-    } else {
-     if (a == ""){
-          $.post("./notes/new",
-            {
-              sender: x,
-              receiver: y,
-              msg: z,
-              musicAvailable: "hidden",
-              musicLink: "notAvailable"
-            },
-            function(data,status){
-              let nyum = JSON.parse(data);
-
-              location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
-          });
-      } else {
-          $.post("./notes/new,
-            {
-              sender: x,
-              receiver: y,
-              msg: z,
-              musicAvailable: " ",
-              musicLink: a
-            },
-            function(data,status){
-              let nyum = JSON.parse(data);
-
-              location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
-          });
-    }
-  })});
+    $(document).ready(function(){
+      $("#buttonPost").click(function(){
+        var x = document.getElementById("sender").value;
+        var y = document.getElementById("recipient").value;
+        var z = document.getElementById("msg").value;
+        var a = document.getElementById("link").value;
+  
+        if (x == "" || y == "" || z == "") {
+          document.getElementById("errorMsg").innerHTML = "Please fill all the fields";
+          document.getElementById("errorMsg").style.display = "block";
+        } else {
+          if (a == ""){
+            $.post("./notes/new",
+              {
+                sender: x,
+                receiver: y,
+                msg: z,
+                musicAvailable: "hidden",
+                musicLink: "notAvailable"
+              },
+              function(data, status){
+                let nyum = JSON.parse(data);
+  
+                location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
+              }
+            );
+          } else {
+            $.post("./notes/new",
+              {
+                sender: x,
+                receiver: y,
+                msg: z,
+                musicAvailable: " ",
+                musicLink: a
+              },
+              function(data, status){
+                let nyum = JSON.parse(data);
+  
+                location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
+              }
+            );
+          }
+        }
+      });
+    });
   </script>
     `)
 })
