@@ -21,7 +21,7 @@ const UsersSchema = new mongoose.Schema(
 
 const noteCountSchema = new mongoose.Schema(
   {
-    current: { type: String, required: true }
+    current: { type: String, required: true },
     next: { type: String, required: true }
   }
 );
