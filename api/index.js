@@ -187,7 +187,7 @@ app.get("/notes/:id", function(req, res) {
   try {
   let data = Note.findOne({ id: `${id}` });
 
-  if (data === "undefined"){
+  if (data.id === "undefined"){
     res.send(`
       <!DOCTYPE html>
     <html data-theme="light" lang="en">
