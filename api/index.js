@@ -323,10 +323,10 @@ app.get("/notes/new", function(req, res) {
       <p class="text-center mt-5">It's nice to see you're here to send your feelings!</p>
       <br />
       <fieldset class="fieldset">
-        <p id="errorMsg" style="display:none" class="validator-hint">
-          Please fill all of the required (*) fields
-          <br />
-        </p>
+      <div id="errorMsg">
+        <p style="display:none" class="validator-hint">Please fill all of the required (*) fields</p>
+        </div>
+        <br />
         <legend class="fieldset-legend">Sender Name</legend>
         <input id="sender" type="text" class="input" placeholder="Budi Tarmiji" />
         <p class="fieldset-label">Optional</p>
@@ -358,53 +358,36 @@ app.get("/notes/new", function(req, res) {
   
   </footer>
 
-  <script>
-    $(document).ready(function(){
-      $("#buttonPost").click(function(){
-        var x = document.getElementById("sender").value;
-        var y = document.getElementById("recipient").value;
-        var z = document.getElementById("msg").value;
-        var a = document.getElementById("link").value;
-  
-        if (x == "" || y == "" || z == "") {
-          document.getElementById("errorMsg").innerHTML = "Please fill all the fields";
-          document.getElementById("errorMsg").style.display = "block";
-        } else {
-          if (a == ""){
-            $.post("./notes/new",
-              {
-                sender: x,
-                receiver: y,
-                msg: z,
-                musicAvailable: "hidden",
-                musicLink: "notAvailable"
-              },
-              function(data, status){
-                let nyum = JSON.parse(data);
-  
-                location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
-              }
-            );
-          } else {
-            $.post("./notes/new",
-              {
-                sender: x,
-                receiver: y,
-                msg: z,
-                musicAvailable: " ",
-                musicLink: a
-              },
-              function(data, status){
-                let nyum = JSON.parse(data);
-  
-                location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
-              }
-            );
-          }
-        }
-      });
-    });
-  </script>
+      <script>
+        $(document).ready(function () {
+          $("#buttonPost").click(function () {
+            const sender = $("#sender").val();
+            const receiver = $("#recipient").val();
+            const msg = $("#msg").val();
+            const link = $("#link").val();
+
+            if (!receiver || !msg) {
+              $("#errorMsg").text("Recipient and Message are required").show();
+              return;
+            }
+
+            $.post("/notes/new", {
+              sender: sender || "Anonymous",
+              receiver,
+              msg,
+              musicAvailable: link ? "visible" : "hidden",
+              musicLink: link || "notAvailable",
+            })
+              .done(function (data) {
+                alert("Note created successfully!");
+                window.location.href = "/notes/" + data.id;
+              })
+              .fail(function (err) {
+                $("#errorMsg").text(err.responseJSON.message).show();
+              });
+          });
+        });
+      </script>
     `)
 })
 
