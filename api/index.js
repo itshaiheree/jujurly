@@ -19,13 +19,16 @@ const UsersSchema = new mongoose.Schema(
 
 let Note = mongoose.model("Note", UsersSchema);
 
-async function getNote(id) {
-  let ids = await Note.findOne({ id: id }).exec();;
-  if (ids !== null) {
-    return ids;
-  } else {
-    return false;
-  }
+async function addNote(userId, sender, target, pesan, music, link) {
+  let obj = {
+    id: userId,
+    senderName: sender,
+    receiver: target,
+    msg: pesan,
+    musicAvailable: music,
+    musicLink: link
+  };
+  Note.create(obj);
 }
 
 // we've started you off with Express,
@@ -188,13 +191,22 @@ app.get("/", function(request, response) {
   `)
 });
 
+app.get("/notes/new", function(req, res) {
+  const id = req.query.id;
+
+  if (req.query.id == null || req.query.sender == null || req.query.receiver == null || req.query.msg == null || req.query.musicAvailable == null || req.query.musicLink == null){
+    res.send('Bro, string nya gak lengkap')
+  }  
+  
+  addNote(`${id}`, `${req.query.sender}`, `${req.query.receiver}`, `${req.query.msg}`, `${req.query.musicAvailable}`, `${req.query.musicLink}`)
+})
 // notes render
 app.get("/notes/:id", function(req, res) {
   const id = req.params.id;
 
   (async () => {
   try {
-  let data = getNote(id);
+  let data = await Note.findOne({ id: id }).exec();
   
 console.log(data);
 
