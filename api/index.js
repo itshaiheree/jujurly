@@ -199,6 +199,7 @@ app.get("/notes/new", function(req, res) {
   }  
   
   addNote(`${id}`, `${req.query.sender}`, `${req.query.receiver}`, `${req.query.msg}`, `${req.query.musicAvailable}`, `${req.query.musicLink}`)
+  .then(() => { res.send('done') })
 })
 // notes render
 app.get("/notes/:id", function(req, res) {
