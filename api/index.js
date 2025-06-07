@@ -246,7 +246,7 @@ app.get("/notes/setid", function(req, res) {
 })
 
 //note new post handler
-app.post("/notes/new", function(req, res) {
+app.post('/newHand', (req, res) => {
   const data = NoteCount.find().exec();
   const id = data.next;
 
@@ -371,7 +371,7 @@ $(document).ready(function(){
       document.getElementById("errorMsg").style.display = "block";
     } else {
      if (a == ""){
-          $.post("./notes/new",
+          $.post("./newHand",
             {
               sender: x,
               receiver: y,
@@ -385,7 +385,7 @@ $(document).ready(function(){
               location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
           });
       } else {
-          $.post("./notes/new",
+          $.post("./newHand",
             {
               sender: x,
               receiver: y,
