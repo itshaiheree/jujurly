@@ -670,13 +670,6 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 })();
 })
 
-//  Response 404 Page
-app.use(function (req, res, next) {
-  if (req.accepts('html')) {
-    res.sendFile(path.join(__dirname, '../public', '404.html'));
-    return;
-  }
-});
 
 
 // listen for requests :)
