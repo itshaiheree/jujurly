@@ -385,7 +385,7 @@ app.get("/notes/new", function(req, res) {
               location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
           });
       } else {
-          $.post("./notes/new,
+          $.post("./notes/new",
             {
               sender: x,
               receiver: y,
