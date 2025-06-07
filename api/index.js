@@ -359,7 +359,7 @@ app.get("/notes/new", function(req, res) {
   </footer>
  
   <script>
-  $(document).ready(function(){
+$(document).ready(function(){
   $("#buttonPost").click(function(){
     var x = document.getElementById("sender").value;
     var y = document.getElementById("recipient").value;
@@ -399,8 +399,9 @@ app.get("/notes/new", function(req, res) {
               location.replace('https://sendanote.mhai.my.id' + "/notes/" + nyum.id);
           });
     }
-  })
-    });
+  }
+})
+});
   </script>
     `)
 })
