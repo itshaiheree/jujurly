@@ -670,24 +670,14 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
 })();
 })
 
-
-
 //  Response 404 Page
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
   if (req.accepts('html')) {
-res.sendFile(path.join(__dirname, '../public', '404.html'));
+    res.sendFile(path.join(__dirname, '../public', '404.html'));
     return;
   }
 });
 
-
-app.use(
-  (request, response, next) => {
-    response.set('X-Frame-Options', 'deny');
-    next();
-  },
-  express.static('public')
-);
 
 // listen for requests :)
 var listener = app.listen(1949, function() {
