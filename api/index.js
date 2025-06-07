@@ -75,6 +75,10 @@ async function setFirstNote(number) {
   NoteCount.create(obj);
 }
 
+// Tambahkan middleware untuk mem-parsing body JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // homepage
 app.get("/", function(request, response) {
   response.send(`
@@ -245,23 +249,27 @@ app.get("/notes/setid", function(req, res) {
   .then(() => { res.send('done') })
 })
 
-//note new post handler
-app.post('/newHand', (req, res) => {
-  const data = NoteCount.find().exec();
-  const id = data.next;
+// Endpoint POST untuk menangani data dari form
+app.post('/newHand', async (req, res) => {
+  try {
+    const data = await NoteCount.findOne().exec();
+    const id = data.next;
 
-  if (req.body.sender == null || req.body.receiver == null || req.body.msg == null || req.body.musicAvailable == null || req.body.musicLink == null){
-    res.json({ status: "failed", message: "Please fill all the fields" });
-  }  
-  
+    const { sender, receiver, msg, musicAvailable, musicLink } = req.body;
 
-  addNote(`${id}`, `${req.body.sender}`, `${req.body.receiver}`, `${req.body.msg}`, `${req.body.musicAvailable}`, `${req.body.musicLink}`)
-  .then(() => { 
-    setCurrentNote()
+    if (!sender || !receiver || !msg || !musicAvailable || !musicLink) {
+      return res.status(400).json({ status: "failed", message: "Please fill all the fields" });
+    }
 
-    res.json({ status: "success", message: "Yeah, its success, what did you expect with the message?", id: `${id}`}) 
-  })
-})
+    await addNote(`${id}`, sender, receiver, msg, musicAvailable, musicLink);
+    await setCurrentNote();
+
+    res.json({ status: "success", message: "Note successfully created", id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ status: "error", message: "Internal server error" });
+  }
+});
 
 //note new page
 app.get("/notes/new", function(req, res) {
