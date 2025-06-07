@@ -43,6 +43,7 @@ async function addNote(userId, sender, target, pesan, music, link) {
 
 async function setCurrentNote() {
   const nextNumber = NoteCount.find().current + 1;
+  let data = NoteCount.find().current;
 
   if (nextNumber === "22" || nextNumber === "24") {
     const nextNumberr = NoteCount.find().current + 2;
